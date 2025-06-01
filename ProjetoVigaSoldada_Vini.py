@@ -74,7 +74,7 @@ def violations(parameters): # Verifica violação de restrições
 
 def Calculate_Penalty(parameters):  # Penaliza soluções inválidas
     #penalty = (np.multiply(violations(parameters), 100)).sum()
-    penalty = violations(parameters).sum() * 100
+    penalty = violations(parameters).sum() * 10
     #penalty = penalty * 100
     return penalty
 
@@ -113,7 +113,7 @@ problem_dict1 = { #Configuração do Problema
 
 modelList = [] #Lista de modelos
 #modelList.append(PSO.AIW_PSO(epoch=ME, pop_size=PS, c1=2.05, c2=2.05, alpha=0.8))
-#modelList.append(PSO.OriginalPSO(epoch=ME, pop_size=PS, c1=2.05, c2=2.05, w_min=0.7, w_max=0.8)) #Modelo usado
+modelList.append(PSO.OriginalPSO(epoch=ME, pop_size=PS, c1=2.05, c2=2.05, w_min=0.7, w_max=0.8)) #Modelo usado
 #modelList.append(MFO.OriginalMFO(epoch=ME, pop_size=PS))
 modelList.append(JADE(epoch=ME, pop_size=PS))
 
